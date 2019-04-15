@@ -1,0 +1,26 @@
+---
+
+- name: Vim - Create .vim directory
+  file:
+    path: /home/{{ user }}/.vim
+    state: directory
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    mode: 0755
+
+- name: Vim - Clone my dotvim
+  git:
+    repo: "https://github.com/Tojaj/dotvim.git"
+    dest: "/home/{{ user }}/.vim"
+
+- name: Vim - Link .vimrc file
+  file:
+    src: "/home/{{ user }}/.vim/vimrc"
+    dest: "/home/{{ user }}/.vimrc"
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    state: link
+
+- name: Vim - Notify about plugin installation via BundleInstall
+  debug:
+    msg: 'Please run: "vim +BundleInstall +qall"'

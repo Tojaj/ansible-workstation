@@ -1,0 +1,15 @@
+---
+- name: Setup my workstation
+  hosts: localhost
+  connection: local
+  #roles:
+  #  - common
+  roles:
+    - role: common
+      vars:
+        user: tojaj
+  #tasks:
+  #  - include_role:
+  #      name: common
+  #    vars:
+  #      user: tojaj

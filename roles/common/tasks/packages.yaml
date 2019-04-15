@@ -1,0 +1,79 @@
+---
+
+- name: Update all installed packages
+  dnf:
+    name: "*"
+    state: latest
+    update_cache: yes
+
+- name: Install packages - Multimedia
+  dnf:
+    name:
+      - vlc
+    state: latest
+
+- name: Install packages - Web
+  dnf:
+    name:
+      - firefox
+      - filezilla
+      - google-chrome-stable
+      - chrome-gnome-shell
+
+- name: Install packages - Graphics
+  dnf:
+    name:
+      - darktable
+      - inkscape
+      - gimp
+
+- name: Install packages - Work
+  dnf:
+    name:
+      - git
+      - vim
+      - gvim
+      - meld
+      - virtualenv
+      - jq
+      - ipython
+      - krb5-workstation
+
+- name: Install packages - Look
+  dnf:
+    name:
+      - arc-theme
+      - numix-icon-theme-circle
+
+- name: Install packages - Misc
+  dnf:
+    name:
+      - mc
+      - dropbox
+      - calibre
+      - menulibre
+      - mono-core
+      - htop
+      - dropbox
+      - gnome-tweaks
+      - unrar
+      - rpmconf
+      - dnf-plugin-system-upgrade
+      - docker
+      - flatpak
+      - gnome-terminal-nautilus
+
+- name: Install packages - Virtualization
+  dnf:
+    name:
+      - virtualbox
+      - kernel-devel
+  when: complete | default(False)
+
+- name: Install packages - Machine Learning
+  dnf:
+    name:
+      - python3-scikit-learn
+      - python3-jupyter-client
+      - python3-jupyter-core
+  when: complete | default(False)

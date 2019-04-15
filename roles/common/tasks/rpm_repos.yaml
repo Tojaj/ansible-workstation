@@ -1,0 +1,20 @@
+---
+
+- name: Repositories - RPM Fusion
+  dnf:
+    name:
+      - 'https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ansible_distribution_version}}.noarch.rpm'
+      - 'https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ansible_distribution_version}}.noarch.rpm'
+    state: present
+
+- name: Repositories - Repofiles
+  copy:
+    src: ../files/{{item}}
+    dest: /etc/yum.repos.d/
+    owner: root
+    group: root
+    mode: 0644
+  loop:
+    - "dropbox.repo"
+    - "google-chrome.repo"
+    - "virtualbox.repo"

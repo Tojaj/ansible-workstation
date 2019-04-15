@@ -1,0 +1,41 @@
+---
+
+- name: Tuning - sysctl.conf swappiness
+  sysctl:
+    name: vm.swappiness
+    value: 10
+    state: present
+
+- name: Tuning - Make sure there is noatime in fstab for "/" and "/home"
+  block:
+    # 1) Create a temp directory
+    - tempfile:
+        state: directory
+        suffix: virtualenv
+      register: tempdir
+    # 2) Print the dir path
+    - debug:
+        msg: "Using tempdir: {{tempdir.path}}"
+    # 3) Install fstab lib to a virtualenv in the temp dir with pip
+    - pip:
+        name: fstab
+        virtualenv: "{{ tempdir.path }}"
+        virtualenv_python: python2
+        virtualenv_site_packages: yes
+    # 4) Update mount options using the python and lib in the virtual env
+    - mountopts:
+        name: "{{ item }}"
+        option: noatime
+        state: present
+      with_items:
+        - /
+        - /home
+      vars:
+        ansible_python_interpreter: "{{tempdir.path}}/bin/python"
+  always:  # Always do a cleanup
+    # 5) Remove the temporary dir (virtual env)
+    - file:
+        path: "{{ tempdir.path }}"
+        state: absent
+      when: tempdir.path is defined
+

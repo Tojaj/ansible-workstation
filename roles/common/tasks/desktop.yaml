@@ -1,0 +1,36 @@
+---
+
+- name: Desktop - Prepare dir for wallpapers
+  file:
+    path: "/home/{{user}}/Pictures/Wallpapers"
+    owner: "{{user}}"
+    group: "{{user}}"
+    state: directory
+
+- name: Desktop - Copy wallpapers
+  become_user: "{{user}}"
+  copy:
+    src: "../files/{{item}}"
+    dest: "/home/{{user}}/Pictures/Wallpapers/"
+  loop:
+    - "almora_1920x1080.png"
+    - "vifan_1920x1080.jpg"
+    - "zune_1920x1200.jpg"
+
+- name: Desktop - Set Wallpaper
+  become_user: "{{user}}"
+  dconf:
+    key: "/org/gnome/desktop/background/picture-uri"
+    value: "'file:///home/{{user}}/Pictures/Wallpapers/zune_1920x1200.jpg'"
+
+- name: Desktop - Set GTK Theme
+  become_user: "{{user}}"
+  dconf:
+    key: "/org/gnome/desktop/interface/gtk-theme"
+    value: "'Arc-solid'"
+
+- name: Desktop - Set Icon Theme
+  become_user: "{{user}}"
+  dconf:
+    key: "/org/gnome/desktop/interface/icon-theme"
+    value: "'Numix-Circle'"

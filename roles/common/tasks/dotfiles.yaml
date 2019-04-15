@@ -1,0 +1,9 @@
+---
+
+- name: Dotfile - bashrc
+  copy:
+    src: ../files/dot_bashrc
+    dest: /home/{{ user }}/.bashrc
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    mode: 0644

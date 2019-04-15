@@ -1,0 +1,8 @@
+---
+  - import_tasks: rpm_repos.yaml
+  - import_tasks: packages.yaml
+  - import_tasks: flatpaks.yaml
+  - import_tasks: dotfiles.yaml
+  - import_tasks: desktop.yaml
+  - import_tasks: tuning.yaml
+  - import_tasks: vim.yaml

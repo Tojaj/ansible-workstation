@@ -1,0 +1,11 @@
+---
+
+- name: Instal Flatpak - Spotify
+  flatpak:
+    name: com.spotify.Client
+    state: present
+
+- name: Instal Flatpak - Atom
+  flatpak:
+    name: io.atom.Atom
+    state: present
