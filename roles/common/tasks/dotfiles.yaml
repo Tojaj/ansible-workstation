@@ -2,7 +2,7 @@
 
 - name: Dotfile - bashrc
   copy:
-    src: ../files/dot_bashrc
+    src: dot_bashrc
     dest: /home/{{ user }}/.bashrc
     owner: "{{ user }}"
     group: "{{ user }}"

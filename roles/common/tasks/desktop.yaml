@@ -10,7 +10,7 @@
 - name: Desktop - Copy wallpapers
   become_user: "{{user}}"
   copy:
-    src: "../files/{{item}}"
+    src: "{{item}}"
     dest: "/home/{{user}}/Pictures/Wallpapers/"
   loop:
     - "almora_1920x1080.png"
