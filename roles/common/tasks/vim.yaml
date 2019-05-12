@@ -9,6 +9,8 @@
     mode: 0755
 
 - name: Vim - Clone my dotvim
+  become_user: "{{ user }}"
+  become: yes
   git:
     repo: "https://github.com/Tojaj/dotvim.git"
     dest: "/home/{{ user }}/.vim"

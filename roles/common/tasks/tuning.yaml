@@ -38,4 +38,5 @@
         path: "{{ tempdir.path }}"
         state: absent
       when: tempdir.path is defined
+  when: not ansible_check_mode
 

@@ -7,3 +7,4 @@
     owner: "{{ user }}"
     group: "{{ user }}"
     mode: 0644
+    setype: "user_home_t"
