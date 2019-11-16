@@ -45,5 +45,5 @@
   become: yes
   dconf:
     key: "/org/gnome/software/download-updates"
-    value: false
+    value: "false"
 
