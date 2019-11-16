@@ -31,7 +31,19 @@ found because the installatio nof repo files was also just a dry run.
 
 # Config options of this playbook
 
-You can see and set the variables in:
+You can set your own variabled directly in ``workstation.yaml`` in ``vars``
+section for the "common" role:
+
+    ...
+      roles:
+        - role: common
+          vars:
+            user: tojaj
+            fullname: Tomas Mlcoch
+            email: xtojaj@gmail.com
+    ...
+
+You can see list of variables and their defaults in:
 
     roles/common/defaults/main.yaml
 
