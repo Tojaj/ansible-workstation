@@ -1,0 +1,26 @@
+---
+
+- name: Git - Set Name
+  become_user: "{{ user }}"
+  become: yes
+  git_config:
+    name: user.name
+    scope: global
+    value: '{{ fullname }}'
+
+- name: Git - Set Email
+  become_user: "{{ user }}"
+  become: yes
+  git_config:
+    name: user.email
+    scope: global
+    value: '{{ email }}'
+
+- name: Git - Rebase by defaul during pull
+  become_user: "{{ user }}"
+  become: yes
+  git_config:
+    name: pull.rebase
+    scope: global
+    value: 'true'
+
