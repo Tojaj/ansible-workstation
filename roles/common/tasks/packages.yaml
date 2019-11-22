@@ -61,6 +61,7 @@
       - docker
       - flatpak
       - gnome-terminal-nautilus
+      - libreoffice-langpack-cs
 
 - name: Install packages - Virtualization
   dnf:
