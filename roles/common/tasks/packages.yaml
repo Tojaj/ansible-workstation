@@ -35,6 +35,7 @@
       - gvim
       - meld
       - virtualenv
+      - python3-virtualenvwrapper
       - jq
       - ipython
       - krb5-workstation
