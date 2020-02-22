@@ -39,6 +39,8 @@
       - jq
       - ipython
       - krb5-workstation
+      - pylint
+      - python3-pyflakes
 
 - name: Install packages - Look
   dnf:
