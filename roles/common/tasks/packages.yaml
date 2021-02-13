@@ -17,8 +17,9 @@
     name:
       - firefox
       - filezilla
-      - google-chrome-stable
-      - chrome-gnome-shell
+      - chromium-freeworld
+      #- google-chrome-stable  # Replaced by Chromium - REMOVELATER
+      #- chrome-gnome-shell    # Replaced by Chromium - REMOVELATER
 
 - name: Install packages - Graphics
   dnf:
@@ -61,10 +62,21 @@
       - unrar
       - rpmconf
       - dnf-plugin-system-upgrade
-      - docker
+      - podman
       - flatpak
       - gnome-terminal-nautilus
       - libreoffice-langpack-cs
+
+- name: Install packages - Video acceleration for Intel
+  block:
+    - dnf:
+        name:
+          - libva
+          - libva-intel-driver
+          - libva-vdpau-driver
+          - libva-utils
+    - debug:
+        msg: "See more: https://lukas.zapletalovi.com/2020/10/enable-vaapi-on-intel.html"
 
 - name: Install packages - Virtualization
   dnf:

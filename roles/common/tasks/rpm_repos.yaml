@@ -17,6 +17,6 @@
     seuser: "system_u"
     setype: "system_conf_t"
   loop:
-    - "dropbox.repo"
+    #- "dropbox.repo" # Dropbox is included in RPM Fusion now REMOVELATER
     - "google-chrome.repo"
     - "virtualbox.repo"

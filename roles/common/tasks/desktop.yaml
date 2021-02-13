@@ -17,14 +17,16 @@
   loop:
     - "almora_1920x1080.png"
     - "vifan_1920x1080.jpg"
+    - "Vifan_2560x1440.jpg"
     - "zune_1920x1200.jpg"
+    - "zune_2560x1600.jpg"
 
 - name: Desktop - Set Wallpaper
   become_user: "{{user}}"
   become: yes
   dconf:
     key: "/org/gnome/desktop/background/picture-uri"
-    value: "'file:///home/{{user}}/Pictures/Wallpapers/zune_1920x1200.jpg'"
+    value: "'file:///home/{{user}}/Pictures/Wallpapers/Vifan_2560x1440.jpg'"
 
 - name: Desktop - Set GTK Theme
   become_user: "{{user}}"
