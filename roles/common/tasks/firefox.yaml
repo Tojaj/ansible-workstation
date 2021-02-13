@@ -1,0 +1,11 @@
+---
+
+- name: Firefox custom settings
+  copy:
+    src: "firefox-prefs-tojaj.js"
+    dest: /usr/lib64/firefox/defaults/pref/
+    owner: root
+    group: root
+    mode: 0644
+    seuser: "system_u"
+    setype: "lib_t"
