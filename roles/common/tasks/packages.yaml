@@ -27,6 +27,8 @@
       - darktable
       - inkscape
       - gimp
+      - gthumb
+      - ImageMagick
 
 - name: Install packages - Work
   dnf:
@@ -42,6 +44,8 @@
       - krb5-workstation
       - pylint
       - python3-pyflakes
+      - black
+      - ctags
 
 - name: Install packages - Look
   dnf:
@@ -66,6 +70,8 @@
       - flatpak
       - gnome-terminal-nautilus
       - libreoffice-langpack-cs
+      - keepass
+      - mediawriter
 
 - name: Install packages - Video acceleration for Intel
   block:
@@ -85,10 +91,46 @@
       - kernel-devel
   when: complete | default(False)
 
+- name: Install packages - Networking
+  dnf:
+    name:
+      - nmap
+      - wireshark
+      - wireshark-cli
+  when: complete | default(False)
+
+- name: Install packages - Video editing
+  dnf:
+    name:
+      - shotcut
+  when: complete | default(False)
+
+- name: Install packages - Software Defined Radio (SDR)
+  dnf:
+    name:
+      - rtl-sdr
+      - gqrx
+      - gnuradio
+  when: complete | default(False)
+
 - name: Install packages - Machine Learning
   dnf:
     name:
       - python3-scikit-learn
       - python3-jupyter-client
       - python3-jupyter-core
+  when: complete | default(False)
+
+- name: Install packages - Cloud
+  dnf:
+    name:
+      - awscli
+  when: complete | default(False)
+
+- name: Install packages - Games
+  dnf:
+    name:
+      - wesnoth
+      - openttd
+      - steam
   when: complete | default(False)
