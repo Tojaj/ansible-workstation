@@ -77,9 +77,10 @@
   block:
     - dnf:
         name:
+          - intel-media-driver # New generation of Intel Graphic cards
           - libva
-          - libva-intel-driver
-          - libva-vdpau-driver
+          - libva-intel-driver # Pre Broadwell generation of Intel Graphic cards
+          #- libva-vdpau-driver # Nvidia
           - libva-utils
     - debug:
         msg: "See more: https://lukas.zapletalovi.com/2020/10/enable-vaapi-on-intel.html"
