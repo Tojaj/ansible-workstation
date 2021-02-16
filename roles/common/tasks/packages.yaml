@@ -84,6 +84,8 @@
           - libva-utils
     - debug:
         msg: "See more: https://lukas.zapletalovi.com/2020/10/enable-vaapi-on-intel.html"
+    - debug:
+        msg: "See more: https://wiki.archlinux.org/index.php/Hardware_video_acceleration"
 
 - name: Install packages - Virtualization
   dnf:
