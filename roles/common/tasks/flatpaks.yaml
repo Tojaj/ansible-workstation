@@ -9,3 +9,8 @@
   flatpak:
     name: io.atom.Atom
     state: present
+
+- name: Instal Flatpak - Flatseal
+  flatpak:
+    name: com.github.tchx84.Flatseal
+    state: present
