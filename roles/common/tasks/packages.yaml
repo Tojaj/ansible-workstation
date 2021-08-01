@@ -74,6 +74,8 @@
       - keepass
       - mediawriter
       - python3-psutil  # Needed for 'Desktop - Set Wallpaper' task
+      - file-roller  # GUI Gnome App for dealing with archives
+      - file-roller-nautilus  # File-roller Plugin for nautilus
 
 - name: Install packages - Video acceleration for Intel
   block:
