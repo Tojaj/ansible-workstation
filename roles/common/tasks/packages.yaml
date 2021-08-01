@@ -44,6 +44,8 @@
       - krb5-workstation
       - pylint
       - python3-pyflakes
+      - python3-tox
+      - python3-flake8
       - black
       - ctags
       - yamllint
