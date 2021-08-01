@@ -73,6 +73,7 @@
       - libreoffice-langpack-cs
       - keepass
       - mediawriter
+      - python3-psutil  # Needed for 'Desktop - Set Wallpaper' task
 
 - name: Install packages - Video acceleration for Intel
   block:
