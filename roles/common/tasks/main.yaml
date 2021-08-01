@@ -8,3 +8,4 @@
   - import_tasks: vim.yaml
   - import_tasks: git.yaml
   - import_tasks: firefox.yaml
+  - import_tasks: hardening.yaml

@@ -79,6 +79,11 @@
       - file-roller  # GUI Gnome App for dealing with archives
       - file-roller-nautilus  # File-roller Plugin for nautilus
 
+- name: Install packages - Hardening
+  dnf:
+    name:
+      - fail2ban
+
 - name: Install packages - Video acceleration for Intel
   block:
     - dnf:

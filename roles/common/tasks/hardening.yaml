@@ -1,0 +1,35 @@
+---
+
+- name: Hardening - Copy fail2ban global jail config
+  copy:
+    src: 'jail.local'
+    dest: /etc/fail2ban/
+    owner: root
+    group: root
+    mode: 0644
+    seuser: "system_u"
+
+- name: Hardening - Copy fail2ban jail config for sshd
+  copy:
+    src: 'sshd.local'
+    dest: /etc/fail2ban/jail.d/
+    owner: root
+    group: root
+    mode: 0644
+    seuser: "system_u"
+
+- name: Hardening - Enable fail2ban service
+  service:
+    name: fail2ban
+    state: started
+    enabled: yes
+
+- name: Hardening - Info about fail2ban
+  debug:
+    msg: |
+      To see status of fail2ban later, you can use:
+      sudo fail2ban-client status
+      To see a details about a jail, you can use:
+      sudo fail2ban-client status sshd
+      A nice article about fail2ban:
+      https://fedoramagazine.org/protect-your-system-with-fail2ban-and-firewalld-blacklists/
