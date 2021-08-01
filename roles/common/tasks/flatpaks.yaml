@@ -1,5 +1,12 @@
 ---
 
+- name: Add FlatHub repository
+  flatpak_remote:
+    name: flathub
+    state: present
+    flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo
+    method: system
+
 - name: Instal Flatpak - Spotify
   flatpak:
     name: com.spotify.Client
