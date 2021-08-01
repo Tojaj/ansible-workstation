@@ -1,5 +1,13 @@
 ---
 
+- name: Repositories - RPM Fusion GPG keys
+  rpm_key:
+    state: present
+    key: "{{ item }}"
+  loop:
+    - 'https://rpmfusion.org/keys?action=AttachFile&do=get&target=RPM-GPG-KEY-rpmfusion-nonfree-{{ansible_distribution|lower}}-2020'
+    - 'https://rpmfusion.org/keys?action=AttachFile&do=get&target=RPM-GPG-KEY-rpmfusion-free-{{ansible_distribution|lower}}-2020'
+
 - name: Repositories - RPM Fusion
   dnf:
     name:
