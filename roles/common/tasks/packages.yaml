@@ -46,6 +46,7 @@
       - python3-pyflakes
       - black
       - ctags
+      - yamllint
 
 - name: Install packages - Look
   dnf:
