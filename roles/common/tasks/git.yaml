@@ -24,3 +24,10 @@
     scope: global
     value: 'true'
 
+- name: Git - Set vim as a default editor
+  become_user: "{{ user }}"
+  become: yes
+  git_config:
+    name: core.editor
+    scope: global
+    value: 'vim'
