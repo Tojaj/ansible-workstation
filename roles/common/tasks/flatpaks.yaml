@@ -12,11 +12,6 @@
     name: com.spotify.Client
     state: present
 
-- name: Instal Flatpak - Atom
-  flatpak:
-    name: io.atom.Atom
-    state: present
-
 - name: Instal Flatpak - Flatseal
   flatpak:
     name: com.github.tchx84.Flatseal

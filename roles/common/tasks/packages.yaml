@@ -17,7 +17,7 @@
     name:
       - firefox
       - filezilla
-      - chromium-freeworld
+      - chromium
       #- google-chrome-stable  # Replaced by Chromium - REMOVELATER
       #- chrome-gnome-shell    # Replaced by Chromium - REMOVELATER
 
@@ -73,11 +73,12 @@
       - flatpak
       - gnome-terminal-nautilus
       - libreoffice-langpack-cs
-      - keepass
+      - keepassxc
       - mediawriter
       - python3-psutil  # Needed for 'Desktop - Set Wallpaper' task
       - file-roller  # GUI Gnome App for dealing with archives
       - file-roller-nautilus  # File-roller Plugin for nautilus
+      - wireguard-tools
 
 - name: Install packages - Hardening
   dnf:
