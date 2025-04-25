@@ -79,6 +79,7 @@
       - file-roller  # GUI Gnome App for dealing with archives
       - file-roller-nautilus  # File-roller Plugin for nautilus
       - wireguard-tools
+      - smartmontools
 
 - name: Install packages - Hardening
   dnf:
