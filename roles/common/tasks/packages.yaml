@@ -33,6 +33,7 @@
 - name: Install packages - Work
   dnf:
     name:
+      - fzf
       - git
       - vim
       - gvim
